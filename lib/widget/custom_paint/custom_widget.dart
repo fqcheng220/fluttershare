@@ -51,9 +51,23 @@ class GradientCircularProgressIndicator extends StatelessWidget {
       Color color = Theme.of(context).colorScheme.secondary;
       _colors = [color, color];
     }
-    return Transform.rotate(
-      angle: -pi / 2.0 - _offset,
-      child: CustomPaint(
+    // return Transform.rotate(
+    //   angle: -pi / 2.0 - _offset,
+    //   child: CustomPaint(
+    //       size: Size.fromRadius(radius),
+    //       painter: _GradientCircularProgressPainter(
+    //         strokeWidth: strokeWidth,
+    //         strokeCapRound: strokeCapRound,
+    //         backgroundColor: backgroundColor,
+    //         value: value,
+    //         total: totalAngle,
+    //         radius: radius,
+    //         colors: _colors,
+    //       )
+    //   ),
+    // );
+
+    return  CustomPaint(
           size: Size.fromRadius(radius),
           painter: _GradientCircularProgressPainter(
             strokeWidth: strokeWidth,
@@ -64,7 +78,6 @@ class GradientCircularProgressIndicator extends StatelessWidget {
             radius: radius,
             colors: _colors,
           )
-      ),
     );
   }
 }
@@ -137,13 +150,16 @@ class _GradientCircularProgressPainter extends CustomPainter {
         stops: stops,
       ).createShader(rect);
 
-      canvas.drawArc(
-          rect,
-          _start,
-          _value,
-          false,
-          paint
-      );
+      // canvas.drawArc(
+      //     rect,
+      //     _start,
+      //     _value,
+      //     false,
+      //     paint
+      // );
+
+      canvas.drawArc(Rect.fromLTWH(0, 0,200, 200), 0, total/2, false,
+          paint);
     }
   }
 

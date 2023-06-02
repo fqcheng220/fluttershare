@@ -64,7 +64,7 @@ class GradientCircularProgressRouteState
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: Column(
                     children: <Widget>[
-                      Wrap(
+/*                      Wrap(
                         spacing: 10.0,
                         runSpacing: 16.0,
                         children: <Widget>[
@@ -141,7 +141,7 @@ class GradientCircularProgressRouteState
                             value: _animationController.value,
                           ),
                         ],
-                      ),
+                      ),*/
                       GradientCircularProgressIndicator(
                         colors: [Colors.blue.shade700, Colors.blue.shade200],
                         radius: 100.0,
@@ -149,7 +149,14 @@ class GradientCircularProgressRouteState
                         value: _animationController.value,
                       ),
 
-                      Padding(
+                      GradientCircularProgressIndicator(
+                        colors: [Colors.blue.shade700, Colors.blue.shade200],
+                        radius: 100.0,
+                        strokeWidth: 40.0,
+                        value: _animationController.value,
+                      ),
+
+/*                      Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
                         child: GradientCircularProgressIndicator(
                           colors: [Colors.blue.shade700, Colors.blue.shade300],
@@ -158,7 +165,7 @@ class GradientCircularProgressRouteState
                           value: _animationController.value,
                           strokeCapRound: true,
                         ),
-                      ),
+                      ),*/
                       //剪裁半圆
                       // ClipRect(
                       //   child: Align(
